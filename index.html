@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganapathy Ram Nandhagopal - ERPNext Consultant</title>
+    <meta name="description" content="ERPNext Implementation Consultant & Business Development Specialist">
+    <meta name="keywords" content="ERPNext, ERP Implementation, Business Development, Consultant, Chennai">
+    <meta name="author" content="Ganapathy Ram Nandhagopal">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ganapathy Ram Nandhagopal - ERPNext Consultant">
+    <meta property="og:description" content="ERPNext Implementation Consultant & Business Development Specialist">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ganapathyram-nandhagopal.github.io/portfolio">
+    <meta property="og:image" content="https://ganapathyram-nandhagopal.github.io/portfolio/assets/profile.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ganapathy Ram Nandhagopal - ERPNext Consultant">
+    <meta name="twitter:description" content="ERPNext Implementation Consultant & Business Development Specialist">
+    <meta name="twitter:image" content="https://ganapathyram-nandhagopal.github.io/portfolio/assets/profile.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322d3ee' stroke-width='2'><polyline points='16,18 22,12 16,6'></polyline><polyline points='8,6 2,12 8,18'></polyline></svg>">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4rem;
+            position: relative;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #ffffff;
+            z-index: 1001;
+        }
+
+        .nav-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #22d3ee;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #22d3ee;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #22d3ee;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #22d3ee, #8b5cf6);
+            color: #000000;
+            box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #06b6d4, #7c3aed);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34, 211, 238, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid #fb923c;
+            color: #fb923c;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: #fb923c;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(251, 146, 60, 0.3);
+        }
+
+        .btn-full {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 4rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .hero-blob {
+            position: absolute;
+            width: 24rem;
+            height: 24rem;
+            border-radius: 50%;
+            filter: blur(3rem);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-blob-1 {
+            top: 20%;
+            left: -20%;
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.4) 0%, rgba(34, 211, 238, 0.1) 70%);
+        }
+
+        .hero-blob-2 {
+            top: 40%;
+            right: -20%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(139, 92, 246, 0.1) 70%);
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) scale(1);
+                opacity: 0.4;
+            }
+            50% { 
+                transform: translateY(-20px) scale(1.05);
+                opacity: 0.6;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 2rem 0;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-image {
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .profile-img {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            border: 4px solid rgba(34, 211, 238, 0.5);
+            object-fit: cover;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            border-color: rgba(34, 211, 238, 0.8);
+            box-shadow: 0 0 40px rgba(34, 211, 238, 0.5);
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-greeting {
+            color: #22d3ee;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, #ffffff, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 4vw, 2rem);
+            font-weight: 300;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: #9ca3af;
+            max-width: 42rem;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            padding-top: 2rem;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .social-link {
+            color: #9ca3af;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .social-link:hover {
+            color: #22d3ee;
+            background: rgba(34, 211, 238, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .social-link svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        /* Sections */
+        .section {
+            position: relative;
+            z-index: 10;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: #000000;
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, #ffffff, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-description {
+            color: #9ca3af;
+            font-size: 1.125rem;
+            max-width: 42rem;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            color: #9ca3af;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .location-icon {
+            width: 1rem;
+            height: 1rem;
+            color: #22d3ee;
+        }
+
+        .skills-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: rgba(34, 211, 238, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .skill-category-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .skill-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #22d3ee;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(34, 211, 238, 0.1);
+            color: #22d3ee;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(34, 211, 238, 0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #22d3ee, #8b5cf6);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: rgba(34, 211, 238, 0.5);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #22d3ee, #8b5cf6);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #000000;
+        }
+
+        .service-header {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-title {
+            color: #ffffff;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .service-description {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .service-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #22d3ee;
+        }
+
+        .service-features {
+            list-style: none;
+            flex: 1;
+        }
+
+        .service-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #d1d5db;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .feature-icon {
+            width: 1rem;
+            height: 1rem;
+            color: #22d3ee;
+            flex-shrink: 0;
+        }
+
+        /* Partners Section */
+        .partners-timeline {
+            max-width: 48rem;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .partner-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 3rem;
+            border-left: 2px solid rgba(34, 211, 238, 0.3);
+        }
+
+        .partner-dot {
+            position: absolute;
+            left: -0.5rem;
+            top: 0;
+            width: 1rem;
+            height: 1rem;
+            background: #22d3ee;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+        }
+
+        .partner-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .partner-content:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(34, 211, 238, 0.3);
+            transform: translateX(0.5rem);
+        }
+
+        .partner-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .partner-type {
+            color: #22d3ee;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .partner-description {
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            max-width: 48rem;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.05), rgba(139, 92, 246, 0.05));
+            z-index: -1;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, #ffffff, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-description {
+            color: #9ca3af;
+            max-width: 36rem;
+            margin: 0 auto 3rem;
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(34, 211, 238, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 2rem;
+            height: 2rem;
+            color: #22d3ee;
+            flex-shrink: 0;
+        }
+
+        .contact-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-link {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .contact-link:hover {
+            color: #22d3ee;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: #000000;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #22d3ee;
+        }
+
+        .footer-name {
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .footer-copyright {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            text-align: center;
+            flex: 1;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social-link {
+            color: #9ca3af;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .footer-social-link:hover {
+            color: #22d3ee;
+            background: rgba(34, 211, 238, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .footer-social-link svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-buttons {
+                flex-wrap: nowrap;
+            }
+            
+            .contact-buttons {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-methods {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .nav-menu {
+                position: fixed;
+                top: 4rem;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem 1rem;
+                gap: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .contact-card {
+                padding: 2rem 1rem;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.75rem;
+            }
+            
+            .hero-content {
+                padding: 1rem 0;
+            }
+            
+            .profile-img {
+                width: 6rem;
+                height: 6rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+            
+            .contact-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .contact-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        .btn:focus,
+        .nav-link:focus,
+        .social-link:focus,
+        .contact-link:focus {
+            outline: 2px solid #22d3ee;
+            outline-offset: 2px;
+            border-radius: 0.25rem;
+        }
+
+        /* Loading animation */
+        .loading {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="loading">
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16,18 22,12 16,6"></polyline>
+                    <polyline points="8,6 2,12 8,18"></polyline>
+                </svg>
+                <span>Ganapathy</span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="https://calendar.app.google/gjweULoC292tp95v5" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Book an Appointment
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-blob hero-blob-1"></div>
+            <div class="hero-blob hero-blob-2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-y17pcmGrWmS1pVyRhoIb2pQC6sd1B8.png" alt="Ganapathyram Nandhagopal" class="profile-img">
+                </div>
+                <div class="hero-text">
+                    <p class="hero-greeting">Hello, I'm</p>
+                    <h1 class="hero-title">Ganapathy Ram Nandhagopal</h1>
+                    <h2 class="hero-subtitle">ERPNext Implementation Consultant & Business Development Specialist</h2>
+                </div>
+                <p class="hero-description">
+                    Transforming businesses through strategic ERPNext implementations across Manufacturing, Service, and
+                    Healthcare sectors. Building sustainable growth with BUDE Global Enterprise.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">
+                        View My Work
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12,5 19,12 12,19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="tel:+916383236424" class="btn btn-outline">Contact Me</a>
+                </div>
+                <div class="social-links">
+                    
+                    <a href="https://www.linkedin.com/in/ganapathyramnandhagopal/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="mailto:ganapathyram.n@gmail.com" class="social-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="about-text">
+                        <p>
+                            I graduated with a degree in Commerce, specializing in Computer Applications 🎓. This laid the
+                            foundation for my journey into the world of ERP solutions. I initially kick-started my career as an
+                            ERPNext Implementation Consultant 🛠️, where I gained invaluable experience and insight into the ERP
+                            landscape.
+                        </p>
+                        <p>
+                            With comprehensive knowledge and hands-on experience in ERPNext Implementation, Business Development
+                            📈, Project Management 📊, and Consulting 💡, I have the skill set to deliver high-quality ERP
+                            solutions tailored to meet the unique needs of each client.
+                        </p>
+                        <p>
+                            At present, my role is laser-focused on spearheading business development initiatives 🚀. I am keenly
+                            concentrated on the Manufacturing 🏭, Service 📞, and Healthcare 🏥 sectors, where I aim to implement
+                            ERP solutions that streamline operations, enhance productivity, and drive business growth.
+                        </p>
+                    </div>
+                    <div class="location">
+                        <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Chennai, India</span>
+                    </div>
+                </div>
+                <div class="skills-content">
+                    <h3 class="skills-title">Core Expertise</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">
+                                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16,18 22,12 16,6"></polyline>
+                                    <polyline points="8,6 2,12 8,18"></polyline>
+                                </svg>
+                                ERPNext Implementation
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">ERPNext</span>
+                                <span class="skill-tag">Frappe Framework</span>
+                                <span class="skill-tag">Business Process Mapping</span>
+                                <span class="skill-tag">System Configuration</span>
+                                <span class="skill-tag">Data Migration</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">
+                                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                                Business Development
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Growth Strategy</span>
+                                <span class="skill-tag">Market Analysis</span>
+                                <span class="skill-tag">Client Relations</span>
+                                <span class="skill-tag">Sales Process</span>
+                                <span class="skill-tag">Lead Generation</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">
+                                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4"></path>
+                                    <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                                    <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                                    <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"></path>
+                                    <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"></path>
+                                </svg>
+                                Project Management
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Project Planning</span>
+                                <span class="skill-tag">Stakeholder Management</span>
+                                <span class="skill-tag">Risk Assessment</span>
+                                <span class="skill-tag">Quality Assurance</span>
+                                <span class="skill-tag">Training & Support</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="skill-category-title">
+                                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                                </svg>
+                                ERP Consulting
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Strategic Planning</span>
+                                <span class="skill-tag">Process Optimization</span>
+                                <span class="skill-tag">Change Management</span>
+                                <span class="skill-tag">Performance Analysis</span>
+                                <span class="skill-tag">Best Practices</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Services</h2>
+                <p class="section-description">
+                    Comprehensive ERP solutions designed to accelerate your business growth across Manufacturing, Service, and
+                    Healthcare sectors
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="service-header">
+                        <h3 class="service-title">ERPNext Implementation & Consulting</h3>
+                        <p class="service-description">
+                            Complete ERPNext solutions tailored to your business needs, from initial consultation to full deployment and training across Manufacturing, Service, and Healthcare sectors.
+                        </p>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-price">Starting at $5,000</div>
+                        <ul class="service-features">
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Custom ERPNext setup
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Business process optimization
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Data migration
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Staff training & support
+                            </li>
+                        </ul>
+                        <a href="mailto:ganapathyram.n@gmail.com?subject=ERPNext Implementation Inquiry" class="btn btn-primary btn-full">Get Started</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <div class="service-header">
+                        <h3 class="service-title">Business Development Strategy</h3>
+                        <p class="service-description">
+                            Strategic business development initiatives focused on growth acceleration and operational excellence in your target markets.
+                        </p>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-price">Starting at $3,000</div>
+                        <ul class="service-features">
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Growth strategy planning
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Market analysis
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Process optimization
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Performance metrics
+                            </li>
+                        </ul>
+                        <a href="mailto:ganapathyram.n@gmail.com?subject=Business Development Inquiry" class="btn btn-primary btn-full">Get Started</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"></path>
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                            <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"></path>
+                            <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"></path>
+                        </svg>
+                    </div>
+                    <div class="service-header">
+                        <h3 class="service-title">Project Management & Consulting</h3>
+                        <p class="service-description">
+                            End-to-end project management services ensuring successful ERP implementation from inception to completion.
+                        </p>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-price">Starting at $4,000</div>
+                        <ul class="service-features">
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Project planning & execution
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Stakeholder management
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Risk assessment
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Quality assurance
+                            </li>
+                        </ul>
+                        <a href="mailto:ganapathyram.n@gmail.com?subject=Project Management Inquiry" class="btn btn-primary btn-full">Get Started</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="service-header">
+                        <h3 class="service-title">ERP Training & Support</h3>
+                        <p class="service-description">
+                            Comprehensive training programs and ongoing support to maximize your ERPNext investment and user adoption.
+                        </p>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-price">Starting at $2,000</div>
+                        <ul class="service-features">
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                User training programs
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Documentation creation
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                Ongoing support
+                            </li>
+                            <li class="service-feature">
+                                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                                System optimization
+                            </li>
+                        </ul>
+                        <a href="mailto:ganapathyram.n@gmail.com?subject=Training & Support Inquiry" class="btn btn-primary btn-full">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Trusted Partners & Clients</h2>
+                <p class="section-description">Building successful partnerships across industries</p>
+            </div>
+            <div class="partners-timeline">
+                <div class="partner-item">
+                    <div class="partner-dot"></div>
+                    <div class="partner-content">
+                        <h3 class="partner-name">AD3 Infotech</h3>
+                        <p class="partner-type">Technology Partner</p>
+                        <p class="partner-description">Strategic technology partnership for innovative ERP solutions and digital transformation initiatives across multiple industry verticals.</p>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="partner-dot"></div>
+                    <div class="partner-content">
+                        <h3 class="partner-name">Drops Chemicals</h3>
+                        <p class="partner-type">Chemical Manufacturing</p>
+                        <p class="partner-description">Successful ERPNext implementation for chemical manufacturing operations, streamlining production processes and inventory management.</p>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="partner-dot"></div>
+                    <div class="partner-content">
+                        <h3 class="partner-name">BUDE Global Enterprise</h3>
+                        <p class="partner-type">Current Organization</p>
+                        <p class="partner-description">Building sustainable growth through strategic ERP implementations and business development initiatives across Manufacturing, Service, and Healthcare sectors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-card">
+                <h2 class="contact-title">Let's Work Together</h2>
+                <p class="contact-description">
+                    Ready to transform your business with strategic ERPNext implementation? Let's discuss how we can accelerate your growth and optimize your operations.
+                </p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <div class="contact-info">
+                            <h4>Email</h4>
+                            <a href="mailto:ganapathyram.n@gmail.com" class="contact-link">ganapathyram.n@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <div class="contact-info">
+                            <h4>Phone</h4>
+                            <a href="tel:+916383236424" class="contact-link">+91 63832 36424</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <div class="contact-info">
+                            <h4>Schedule a Meeting</h4>
+                            <a href="https://calendar.app.google/gjweULoC292tp95v5" target="_blank" rel="noopener noreferrer" class="contact-link">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-buttons">
+                    <a href="mailto:ganapathyram.n@gmail.com?subject=ERP Consultation Request" class="btn btn-primary">
+                        Get In Touch
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12,5 19,12 12,19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://calendar.app.google/gjweULoC292tp95v5" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        Schedule Call
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16,18 22,12 16,6"></polyline>
+                        <polyline points="8,6 2,12 8,18"></polyline>
+                    </svg>
+                    <span class="footer-name">Ganapathy Ram Nandhagopal</span>
+                </div>
+                <p class="footer-copyright">© 2024 All rights reserved. Built with ❤️ for business transformation.</p>
+                <div class="footer-social">
+                    
+                    <a href="https://www.linkedin.com/in/ganapathyramnandhagopal/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="mailto:ganapathyram.n@gmail.com" class="footer-social-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Close mobile menu when clicking on a link
+                const navLinks = navMenu.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            let lastScrollTop = 0;
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // Hide/show header on scroll
+                if (scrollTop > lastScrollTop && scrollTop > 200) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+            
+            // Parallax effect for hero blobs
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelectorAll('.hero-blob');
+                const speed = 0.5;
+                
+                parallax.forEach(blob => {
+                    const yPos = -(scrolled * speed);
+                    blob.style.transform = `translateY(${yPos}px)`;
+                });
+            });
+            
+            // Add click tracking for analytics (optional)
+            document.querySelectorAll('.btn, .social-link, .nav-link').forEach(element => {
+                element.addEventListener('click', function() {
+                    const action = this.textContent.trim() || this.getAttribute('aria-label') || 'Unknown';
+                    console.log('User clicked:', action);
+                });
+            });
+            
+            // Keyboard navigation improvements
+            document.addEventListener('keydown', function(e) {
+                // Close mobile menu with Escape key
+                if (e.key === 'Escape') {
+                    const navToggle = document.getElementById('navToggle');
+                    const navMenu = document.getElementById('navMenu');
+                    if (navToggle && navMenu) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            // Log page load time
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            console.log('Page load time:', loadTime + 'ms');
+        });
+    </script>
+</body>
+</html>
